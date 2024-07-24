@@ -17,7 +17,7 @@ dependencies {
 
 application {
     mainClass.set("org.example.MainKt")
-    //applicationDefaultJvmArgs = listOf("-Dfile.encoding=UTF-8")
+    applicationDefaultJvmArgs = listOf("-Dfile.encoding=UTF-8")
 }
 
 kotlin {
