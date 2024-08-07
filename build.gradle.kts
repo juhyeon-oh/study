@@ -11,8 +11,14 @@ repositories {
 }
 
 dependencies {
-    implementation(kotlin("stdlib"))
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+    implementation("com.google.guava:guava:28.1-jre")
+    testImplementation("org.testng:testng:7.4.0") // TestNG 라이브러리 추가
     testImplementation(kotlin("test"))
+}
+
+tasks.test {
+    useTestNG() // TestNG 사용 설정
 }
 
 application {
@@ -25,6 +31,9 @@ kotlin {
     sourceSets {
         val main by getting {
             kotlin.srcDirs("src/main/kotlin")
+        }
+        val test by getting {
+            kotlin.srcDirs("src/test/kotlin")
         }
     }
 }
